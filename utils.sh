@@ -11,7 +11,7 @@ function pearlTearDown(){
 }
 
 function pearlHomeSetUp(){
-    HOME=$(TMPDIR=/tmp mktemp -d -t pearl-user-home.XXXXXXX)
+    export HOME=$(TMPDIR=/tmp mktemp -d -t pearl-user-home.XXXXXXX)
     mkdir -p $HOME
     export PEARL_HOME=${HOME}/.config/pearl
     mkdir -p $PEARL_HOME
