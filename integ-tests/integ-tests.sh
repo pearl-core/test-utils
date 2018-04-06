@@ -10,10 +10,14 @@ if [ ! -d "$PEARL_HOME/packages/default/test" ]; then
 	exit 1
 fi
 
+# set -x option enabled by default as a reminder.
+# Let the consumer decide whether to disable it or not.
 set -x
 
 # From here is where you can add the integ tests for your packages
 source ./tests/integ-tests/integ-tests-common.sh
+
+set +x
 
 pearl update test
 
