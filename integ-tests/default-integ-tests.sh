@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+hash -r
 git --version
 bash --version
 zsh --version
