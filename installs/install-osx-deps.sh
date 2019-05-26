@@ -1,8 +1,7 @@
 #!/bin/sh
 set -ex
 brew update
-# Coreutils and git should be already installed on OSX 7.3+ images:
-#brew install coreutils git
+brew install coreutils gnu-sed grep
 # Openssl is required for installing git from source code
 # Findutils is required for `fonts` Pearl package
 brew install openssl findutils
