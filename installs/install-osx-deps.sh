@@ -1,6 +1,7 @@
 #!/bin/sh
 set -ex
 brew update
+brew install grep gnu-sed
 # Coreutils and git should be already installed on OSX 7.3+ images:
 #brew install coreutils git
 # Openssl is required for installing git from source code
