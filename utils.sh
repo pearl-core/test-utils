@@ -16,8 +16,7 @@ function pearlHomeSetUp(){
     export PEARL_HOME=${HOME}/.config/pearl
     mkdir -p $PEARL_HOME
     mkdir -p $PEARL_HOME/bin
-    mkdir -p $PEARL_HOME/etc
-    touch $PEARL_HOME/etc/pearl.conf
+    touch $PEARL_HOME/pearl.conf
     mkdir -p $PEARL_HOME/repos
     mkdir -p $PEARL_HOME/packages
     mkdir -p $PEARL_HOME/tmp
