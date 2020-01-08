@@ -7,4 +7,6 @@ brew install bash zsh grep gnu-sed
 # Coreutils and git should be already installed on OSX 7.3+ images:
 #brew install coreutils git
 
-./tests/test-utils/installs/install-fish.sh "$TRAVIS_FISH_VERSION"
+BASE_NAME="$(dirname $0)"
+
+"${BASE_NAME}"/install-fish.sh "$TRAVIS_FISH_VERSION"

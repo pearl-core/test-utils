@@ -5,4 +5,6 @@ set -ex
 sudo apt-get -qq update
 sudo apt-get install -y zsh bash git
 
-./tests/test-utils/installs/install-fish.sh "$TRAVIS_FISH_VERSION"
+BASE_NAME="$(dirname $0)"
+
+"${BASE_NAME}"/install-fish.sh "$TRAVIS_FISH_VERSION"
