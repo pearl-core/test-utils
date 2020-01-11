@@ -2,7 +2,7 @@
 set -ex
 
 # Gettext is required for installing git from source code
-sudo apt-get install gettext python
+sudo apt-get install gettext python3
 
 BASE_NAME="$(dirname $0)"
 
