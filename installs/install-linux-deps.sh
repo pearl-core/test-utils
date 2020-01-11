@@ -4,9 +4,15 @@ set -ex
 # Gettext is required for installing git from source code
 sudo apt-get install gettext python3
 
+wget -qO- https://bootstrap.pypa.io/get-pip.py | sudo python3
+
 BASE_NAME="$(dirname $0)"
 
 "${BASE_NAME}"/install-bash.sh "$TRAVIS_BASH_VERSION"
 "${BASE_NAME}"/install-zsh.sh "$TRAVIS_ZSH_VERSION"
 "${BASE_NAME}"/install-fish.sh "$TRAVIS_FISH_VERSION"
 "${BASE_NAME}"/install-git.sh "$TRAVIS_GIT_VERSION"
+
+python3 -m pip install --user pearlcli
+
+~/.local/bin/pearl init

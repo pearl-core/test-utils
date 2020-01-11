@@ -15,3 +15,6 @@ BASE_NAME="$(dirname $0)"
 "${BASE_NAME}"/install-fish.sh "$TRAVIS_FISH_VERSION"
 "${BASE_NAME}"/install-git.sh "$TRAVIS_GIT_VERSION"
 
+python3 -m pip install pearlcli
+
+/usr/local/bin/pearl init
