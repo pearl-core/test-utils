@@ -3,7 +3,7 @@
 set -ex
 
 brew update
-brew install bash zsh grep gnu-sed
+brew install bash zsh grep gnu-sed python
 # Coreutils and git should be already installed on OSX 7.3+ images:
 #brew install coreutils git
 

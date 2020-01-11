@@ -3,7 +3,7 @@
 set -ex
 
 sudo apt-get -qq update
-sudo apt-get install -y zsh bash git
+sudo apt-get install -y zsh bash git python
 
 BASE_NAME="$(dirname $0)"
 
