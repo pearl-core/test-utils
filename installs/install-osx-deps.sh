@@ -6,7 +6,7 @@ brew install grep gnu-sed
 #brew install coreutils git
 # Openssl is required for installing git from source code
 # Findutils is required for `fonts` Pearl package
-brew install openssl findutils python
+brew install openssl findutils
 
 BASE_NAME="$(dirname $0)"
 
