@@ -10,7 +10,3 @@ brew install bash zsh grep gnu-sed
 BASE_NAME="$(dirname $0)"
 
 "${BASE_NAME}"/install-fish.sh "$TRAVIS_FISH_VERSION"
-
-python3 -m pip install pearlcli
-
-/usr/local/bin/pearl init

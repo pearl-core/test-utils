@@ -11,6 +11,3 @@ BASE_NAME="$(dirname $0)"
 
 "${BASE_NAME}"/install-fish.sh "$TRAVIS_FISH_VERSION"
 
-python3 -m pip install --user pearlcli
-
-~/.local/bin/pearl init
