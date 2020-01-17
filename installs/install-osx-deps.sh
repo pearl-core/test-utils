@@ -1,5 +1,12 @@
 #!/bin/sh
 set -ex
+
+# There is an intermittent issue with DNS resolution in OSX with Travis.
+# Fixing it with a static ip:
+STATIC_IP="$(dig +short +tcp github.com)"
+sudo bash -c "echo '${STATIC_IP} github.com' >> /private/etc/hosts"
+cat /private/etc/hosts
+
 brew update
 brew install grep gnu-sed
 # Coreutils and git should be already installed on OSX 7.3+ images:
