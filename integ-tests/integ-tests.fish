@@ -2,7 +2,7 @@
 
 source "$HOME/.config/fish/config.fish"
 
-pearl --verbose install test
+pearl --no-confirm --verbose install test
 
 # Fish trap may not work from time to time.
 # Forcing the sourcing here:
@@ -18,8 +18,8 @@ pearl-source
 # From here is where you can add the integ tests for your packages
 source ./tests/integ-tests/integ-tests-common.sh
 
-pearl --verbose update test
+pearl --no-confirm --verbose update test
 
-pearl --verbose remove test
+pearl --no-confirm --verbose remove test
 
 # vim: ft=sh
