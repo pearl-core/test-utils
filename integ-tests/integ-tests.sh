@@ -21,8 +21,8 @@ source ./tests/integ-tests/integ-tests-common.sh
 
 set +x
 
-pearl --verbose update test
+pearl --no-confirm --verbose update test
 
-pearl --verbose remove test
+pearl --no-confirm --verbose remove test
 
 # vim: ft=sh
