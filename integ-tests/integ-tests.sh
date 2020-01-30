@@ -3,7 +3,7 @@ set -e
 [ -n "$BASH_VERSION" ] && source "$HOME/.bashrc"
 [ -n "$ZSH_VERSION"  ] && source "$HOME/.zshrc"
 
-pearl --verbose install test
+pearl --no-confirm --verbose install test
 
 if [ ! -d "$PEARL_HOME/packages/local/test" ]; then
 	echo 'Error: The package `test` does not exist after installing it.'
