@@ -2,5 +2,5 @@
 
 set -e
 
-python3 -m pip install --user pearlcli
+python3 -m pip install --user pearl
 ~/.local/bin/pearl init
