@@ -1,5 +1,12 @@
 #!/bin/sh
 set -ex
+
+# There is an intermittent issue with DNS resolution in OSX with Travis.
+# Fixing it with a static ip:
+STATIC_IP="$(dig +short +tcp github.com)"
+sudo bash -c "echo '${STATIC_IP} github.com' >> /private/etc/hosts"
+cat /private/etc/hosts
+
 brew update
 ./tests/test-utils/installs/brew-install grep gnu-sed
 # Coreutils and git should be already installed on OSX 7.3+ images:
@@ -8,8 +15,9 @@ brew update
 # Findutils is required for `fonts` Pearl package
 ./tests/test-utils/installs/brew-install openssl findutils
 
-./tests/test-utils/installs/install-bash.sh "$TRAVIS_BASH_VERSION"
-./tests/test-utils/installs/install-zsh.sh "$TRAVIS_ZSH_VERSION"
-./tests/test-utils/installs/install-fish.sh "$TRAVIS_FISH_VERSION"
-./tests/test-utils/installs/install-git.sh "$TRAVIS_GIT_VERSION"
+BASE_NAME="$(dirname $0)"
 
+"${BASE_NAME}"/install-bash.sh "$TRAVIS_BASH_VERSION"
+"${BASE_NAME}"/install-zsh.sh "$TRAVIS_ZSH_VERSION"
+"${BASE_NAME}"/install-fish.sh "$TRAVIS_FISH_VERSION"
+"${BASE_NAME}"/install-git.sh "$TRAVIS_GIT_VERSION"

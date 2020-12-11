@@ -3,6 +3,11 @@
 set -ex
 
 sudo apt-get -qq update
-sudo apt-get install -y zsh bash git
+sudo apt-get install -y zsh bash git python3
 
-./tests/test-utils/installs/install-fish.sh "$TRAVIS_FISH_VERSION"
+wget -qO- https://bootstrap.pypa.io/get-pip.py | sudo python3
+
+BASE_NAME="$(dirname $0)"
+
+"${BASE_NAME}"/install-fish.sh "$TRAVIS_FISH_VERSION"
+
