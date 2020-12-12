@@ -5,26 +5,13 @@
 # This is used on Travis to ensure the install isn't killed when there is no output over a long period (10 minutes).
 # Usage: brew-install package, where package is the name of the package for brew to install.
 
-set -e
-
-seconds=0
-minutes=0
-
 brew install $@ &
 
 while true; do
-  ps -p$! 2>& 1>/dev/null
-  if [[ $? == 0 ]]; then
-    if [[ $seconds == 60 ]]; then
-      let seconds=0
-      let minutes=minutes+1
-      echo "brew install $@ still running ($minutes min)"
+    sleep 60
+    echo "brew install $@ still running"
+    ps -p$! >/dev/null
+    if [[ $? != 0 ]]; then
+        exit
     fi
-    sleep 30
-    let seconds=seconds+30
-  else
-    break
-  fi
 done
-wait $!
-exit $?
