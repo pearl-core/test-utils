@@ -4,7 +4,8 @@ set -ex
 # Gettext is required for installing git from source code
 sudo apt-get install gettext python3
 
-wget -qO- https://bootstrap.pypa.io/get-pip.py | sudo python3
+# pip does only work for python 3.6+
+#wget -qO- https://bootstrap.pypa.io/get-pip.py | sudo python3
 
 BASE_NAME="$(dirname $0)"
 
